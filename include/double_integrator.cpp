@@ -18,7 +18,7 @@ void DoubleIntegrator::integrate()
         [this]
         (const mat21_t& s, mat21_t& dsdt, const double& t)
         {
-            this->DoubleIntegrator::system_dynamics(s, dsdt, t);
+            this->DoubleIntegrator::system_dynamics(s, dsdt, t, u_);
         },
         s_, t_, dt_
     );
@@ -44,7 +44,8 @@ void DoubleIntegrator::get_time(double &time) const
 
 void DoubleIntegrator::system_dynamics(const mat21_t &s, 
 mat21_t &dsdt, 
-const double &t)
+const double &t,
+const double &u)
 {
-    dsdt = A*s + B*u_;
+    dsdt = A*s + B*u;
 }

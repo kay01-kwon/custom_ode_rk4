@@ -20,7 +20,7 @@ class DoubleIntegrator{
         ~DoubleIntegrator() = default;
 
 
-        void system_dynamics(const mat21_t &s_, mat21_t &dsdt_, const double &t);
+        void system_dynamics(const mat21_t &s_, mat21_t &dsdt_, const double &t, const double &u);
 
     private:
 
